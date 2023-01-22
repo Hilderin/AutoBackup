@@ -24,6 +24,8 @@ namespace AutoBackup
         private static string _lastDestination;
         private static string _lastUsername;
         private static int _lastPasswordHash;
+        private static int _lastSecretKeyHash;
+        private static CryptoAlgo _algo;
 
 
         /// <summary>
@@ -280,7 +282,17 @@ namespace AutoBackup
                                 Directory.CreateDirectory(destination);
 
                             if (!String.IsNullOrEmpty(secretKey))
-                                CryptoHelper.FileEncrypt(filename, destFileName, secretKey);
+                            {
+
+                                //Algo creation...
+                                if (_lastSecretKeyHash != secretKey.GetHashCode())
+                                {
+                                    _algo = CryptoHelper.CreateAlgo(secretKey);
+                                    _lastSecretKeyHash = secretKey.GetHashCode();
+                                }
+
+                                CryptoHelper.FileEncrypt(filename, destFileName, _algo);
+                            }
                             else
                                 File.Copy(filename, destFileName, true);
                             Log("ExecuteBackup - File backuped: " + filename + " to " + destFileName);

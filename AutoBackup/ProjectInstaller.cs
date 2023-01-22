@@ -15,13 +15,16 @@ namespace AutoBackup
         public ProjectInstaller()
         {
             InitializeComponent();
+
+            
         }
 
-        protected override void OnCommitted(System.Collections.IDictionary savedState)
+        protected override void OnAfterInstall(IDictionary savedState)
         {
             //Starting service after installation
             ServiceController sc = new ServiceController("AutoBackup");
             sc.Start();
         }
+
     }
 }
