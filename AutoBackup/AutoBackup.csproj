@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>USBAutoBackup.ico</ApplicationIcon>
+    <ApplicationIcon>AutoBackup.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -62,11 +62,11 @@
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
     <Compile Include="SharedFolderConnection.cs" />
-    <Compile Include="USBAutoBackupService.cs">
+    <Compile Include="AutoBackupService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="USBAutoBackupService.Designer.cs">
-      <DependentUpon>USBAutoBackupService.cs</DependentUpon>
+    <Compile Include="AutoBackupService.Designer.cs">
+      <DependentUpon>AutoBackupService.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,7 +76,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="USBAutoBackup.ico" />
+    <Content Include="AutoBackup.ico" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
