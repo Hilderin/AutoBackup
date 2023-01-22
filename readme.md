@@ -19,9 +19,9 @@ You need to create a configuration file named "Config.json" in the same folder a
 This is a json file with these parameters:
 - Source: Source folder to be backuped Since this is a json file all '\' must be doubled.
 - Destination: Destination folder where your backup files will be copied. Since this is a json file all '\' must be doubled.
-- Username (optional): If your destination folder is a network path that is password protected you need to specified a username.
-- Password (optional): If your destination folder is a network path that is password protected you need to specified a passwrd.
-- SecretKey (optionnel): Secret key if you want to encrypt your backup files.
+- Username (optional): If your destination folder is a network path that is password protected, you need to specify a username.
+- Password (optional): If your destination folder is a network path that is password protected, you need to specify a password.
+- SecretKey (optionnal): Secret key if you want to encrypt your backup files.
 
 
 ### Exemple
